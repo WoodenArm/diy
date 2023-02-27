@@ -1,0 +1,47 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}DIY electric bike{% endblock %}
+
+{% block content %}
+
+    <h1 class="title">{{ post.title }}</h1>
+  
+    {% for i in photos %} 
+        {% if i.image.url %}
+
+          <div class="tabs">
+          <div class="big_picture"><img src="{{ i.image.url }}"></div>
+            <div class="zoom-in"><figure>
+              <img src="{{ i.image.url }}">
+              <figcaption>{{ i.title }}</figcaption>
+            </figure></div>
+          </div>
+        {% endif %}
+    {% endfor %} 
+
+    <div class="text">
+        {% autoescape off %}
+          <p>{{ post.content|linebreaks }}</p>
+        {% endautoescape %}
+    </div><hr>
+  <h3 class="title">Коментарі:</h3>
+
+  {% for comment in comments %}
+    Автор - <font size="4" color="#3dac39 ">{{ comment.owner }}</font>
+    <div class="comment">{{ comment.text }}</div>
+    <div class="comment2">Добавлений - {{ comment.time_create|date:"j E Y - H:i" }}</div><br>
+  {% endfor %} 
+
+  {% if user.is_authenticated %}
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button class="button button1" type="submit">Відправити</button>
+    </form>          
+  {% else %}
+    <div class="comment3">Будь ласка авторизуйтеся  щоб залишити коментар.</div>
+  {% endif %}
+
+  
+
+{% endblock content %}

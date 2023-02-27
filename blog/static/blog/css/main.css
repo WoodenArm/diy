@@ -1,0 +1,207 @@
+#navigation {
+    position: sticky;
+    top: 0.5em;
+    left: 0;
+    width: 10em;
+    margin-left: 1em;
+    padding: 0.5em;
+    font: 1.2em "Fira Sans", sans-serif;
+    background-color: #f1f0f0;
+    float: left;
+    /*border-radius: 10px;*/
+}
+
+body {
+    margin: 0; font: 1em "Fira Sans", sans-serif;
+    text-align: left;}
+
+.page {
+  overflow: hidden;
+  display: flex;
+  /*margin: 0, 10px, 0, 0;*/
+  flex-direction: column;
+  min-height: 100vh; 
+  justify-content: flex-start;
+}
+
+.footer {
+    padding: 10px;
+    margin-top: auto;
+    /*font-weight: bolder;*/
+    text-align: center;
+    background-color: #f1f0f0;
+    font: 1em "Fira Sans", sans-serif;
+    /*border-radius: 10px;*/
+}
+
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.title {
+  font: "Fira Sans", sans-serif;
+  color: rgb(97, 93, 93);
+}
+
+.text {
+  font: 1.2em "Fira Sans", sans-serif;
+  line-height: 1.5; 
+}
+
+a:link 				{ text-decoration: none; }
+a:visited 			{ color: #333; text-decoration: none; }
+a:hover, a:active 	{ color: #11a33b; }
+
+hr {
+    width: 60vw;}
+ 
+@media (max-width: 730px) {
+  #navigation {
+    display: none;
+  }
+}
+
+figure {
+  display: inline;
+  padding: 5px; 
+  width: 200px; 
+  float: left;
+  clear: left;
+  margin: 0 10px 10px 0; 
+  text-align: center; 
+  /*border-radius: 10px;*/
+  background-color: #f1f0f0;
+}
+img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  
+  
+}
+figcaption {
+  color: rgb(45, 43, 43); /* Цвет текста */
+  font: 1em "Fira Sans", sans-serif;
+}
+
+.big_picture {
+  display: none;
+  position: fixed;
+  background-color: #313839;
+  padding: 4px 4px 0 4px;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  width: 70vw;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0px 0px 100px 400px rgba(38, 43, 45, 0.805);
+}
+
+.tabs:active .big_picture {
+  display: block;
+}
+
+.big_picture:hover {
+  display: block;
+}
+
+.zoom-in { 
+  cursor: -webkit-zoom-in; 
+  cursor: zoom-in; 
+}
+.gallery {
+  display: flex;
+  margin: 0, 10px, 0, 0;
+  /*min-height: 100vh;*/ 
+  align-content: flex-start; 
+  flex-wrap: wrap;
+}
+
+.form-label {
+  display: inline-block;
+  min-width: 150px;
+  vertical-align: top;
+}
+
+.form-error ul {
+  list-style: none;
+  padding: 0;
+  color: #CC0000;
+}
+
+.comment {
+  padding: 10px;
+  margin-top: auto;
+  text-align: left;
+  background-color: #f1f0f0;
+  font: 1em "Fira Sans", sans-serif;
+  color: rgb(30, 48, 116);
+  font-style: italic;
+}
+
+.comment2 {
+  font: 0.8em "Fira Sans", sans-serif;
+  font-style: bold;
+}
+
+.comment3 {
+  font: 1em "Fira Sans", sans-serif;
+  color:#8e2b1d;
+  font-style: bold;
+  text-align: center;
+}
+
+/*кнопки*/
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 3px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/*поле коментар*/
+.myfield {
+  border: 2px solid #2892c4;
+  border-radius:5px;
+  height:150px;
+  width:450px;
+  margin: 5px 10px 10px 0;
+  font: 1em "Fira Sans", sans-serif;
+  color: rgb(30, 48, 116);
+  font-style: italic;
+  background-color: #f1f0f0;
+}
+
+/*поле вводу*/
+.forms-input {
+  border: 2px solid #2892c4; 
+  border-radius: 5px;
+  height: 20px;
+  width: 200px;
+  padding: 2px 2px 2px 2px;
+  font: 1em "Fira Sans", sans-serif;
+  color: rgb(30, 48, 116);
+  /*font-style: italic;*/
+  background-color: #f1f0f0;
+}

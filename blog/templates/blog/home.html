@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}DIY electric bike{% endblock %}
+
+{% block content %}
+
+  <h1 class="title">{{ home.title }}</h1> 
+
+  {% for i in photos %}
+    {% if i.image.url %} 
+      
+      <div class="tabs">
+        <div class="big_picture"><img src="{{ i.image.url }}"></div>
+        <div class="zoom-in"><figure>
+        <img src="{{ i.image.url }}">
+        <figcaption>{{ i.title }}</figcaption>
+        </figure></div>  
+      </div>
+        
+    {% endif %} 
+  {% endfor %}
+  
+
+  <div class="text">
+    {% autoescape off %}
+      <p>{{ home.content|linebreaks }}</p>
+    {% endautoescape %}
+  </div>
+  <div id="navigation"><a href="{% url 'blog:story' %}">Історія створення</a></div>
+  
+     
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}DIY electric bike{% endblock %}
+
+{% block content %}
+
+    <h1 class="title">Історія створення</h1> 
+
+      <div class="text">
+        <ol>
+         {% for i in posts %} 
+            {% if i.pk != 1 %}
+             <li>
+                <a href="{{ i.get_absolute_url }}">{{ i.title }}</a>
+              </li>
+           {% endif %}
+          {% endfor %} 
+        </ol>
+    
+      </div>
+     
+{% endblock %}

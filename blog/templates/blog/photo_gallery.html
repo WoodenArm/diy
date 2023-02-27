@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}DIY electric bike{% endblock %}
+
+{% block content %}
+
+    <h1 class="title">Фотогалерея</h1>
+    
+    <div class="gallery">
+        {% for i in photos %} 
+            {% if i.image.url %}
+            <div class="tabs">
+            <div class="big_picture"><img src="{{ i.image.url }}"></div>
+                <div class="zoom-in">
+                    <figure>
+                        <img src="{{ i.image.url }}">
+                        <figcaption>{{ i.title }}</figcaption>
+                    </figure>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div> 
+
+    {% endblock %}

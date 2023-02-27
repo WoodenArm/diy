@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}DIY electric bike{% endblock %}
+
+{% block content %}
+
+    <h1 class="title">Пошук</h1> 
+
+   
+      <form>    
+        <input  name="search" class="forms-input">
+        <input class="button button1" type="submit" value="Шукати">
+      </form>
+   
+    {% if posts %}
+      <div class="text">
+        <ul>
+         {% for i in posts %}          
+             <li>
+                <a href="{{ i.get_absolute_url }}">{{ i.title }}</a>
+              </li>          
+          {% endfor %} 
+        </ul>    
+      </div>
+    {% else %}
+      <p>Нічого не знайдено</p>
+    {% endif %}
+
+{% endblock %}
